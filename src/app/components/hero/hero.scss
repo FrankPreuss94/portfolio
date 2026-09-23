@@ -1,0 +1,119 @@
+.hero {
+    width: 100%;
+    height: 100dvh;
+    background: linear-gradient(45deg,
+            rgba(28, 28, 28, 1) 35%,
+            rgba(8, 70, 59, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 96px;
+}
+
+.content_wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scroll_down {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 24px;
+
+    .arrow_down {
+        width: 30px;
+        height: 48px;
+        border: 1px solid rgba(61, 207, 182, 1);
+        border-radius: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bar {
+        height: 240px;
+        width: 0;
+        border: 1px solid rgba(61, 207, 182, 1);
+    }
+}
+
+.introduction {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        font-size: 40px;
+        font-family: 'Fira Code';
+        font-weight: 400;
+        color: rgba(217, 217, 217, 1);
+    }
+
+    h1 {
+        font-size: 128px;
+        font-family: 'Karla';
+        font-weight: 700;
+        color: rgba(217, 217, 217, 1);
+        margin-top: 12px;
+        margin-bottom: 40px;
+    }
+
+    .intro_btns {
+        display: flex;
+        gap: 48px;
+    }
+}
+
+.intro_btns {
+    display: flex;
+    font-size: 18px;
+    font-family: 'Karla';
+    font-weight: 400;
+
+    button {
+        width: 172px;
+        height: 48px;
+        background-color: transparent;
+        border: 1px white solid;
+        border-radius: 100px;
+    }
+}
+
+.social_links {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 24px;
+
+    .social_icons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    p {
+        rotate: 180deg;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-family: 'Karla';
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .bar {
+        height: 186px;
+        width: 0;
+        border: 1px solid white;
+    }
+
+}
