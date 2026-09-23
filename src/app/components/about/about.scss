@@ -1,0 +1,101 @@
+.about_me {
+    width: 100%;
+    height: 100dvh;
+    padding: 145px 96px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(28, 28, 28, 1);
+}
+
+.content_wrapper {
+    width: 100%;
+    height: 80%;
+    max-width: 1440px;
+}
+
+.about_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_wrapper {
+    width: 568px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    img {
+        width: 568px;
+        height: 568px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+}
+
+.about_text_wrapper {
+    width: 568px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.about_text_content {
+    width: 568px;
+    height: 568px;
+    padding: 32px;
+    background-color: rgba(61, 207, 182, 0.1);
+    border: 1px solid rgba(61, 207, 182, 1);
+    border-radius: 30px;
+
+    h2 {
+        font-size: 64px;
+        color: rgba(61, 207, 182, 1);
+        font-family: 'Fira Code';
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+}
+
+.about_text {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+
+    p {
+        margin-bottom: 32px;
+    }
+
+    li {
+        position: relative;
+        margin-bottom: 16px;
+        list-style: none;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 2px;
+
+            width: 24px;
+            height: 24px;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        &.li_one::before {
+            background-image: url('/assets/images/location_on.png');
+        }
+
+        &.li_two::before {
+            background-image: url('/assets/images/cognition.png');
+        }
+
+        &.li_three::before {
+            background-image: url('/assets/images/new_releases.png');
+        }
+    }
+}
