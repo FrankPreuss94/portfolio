@@ -1,0 +1,38 @@
+.projects {
+    width: 100%;
+    // height: 100dvh;
+    padding: 145px 96px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(28, 28, 28, 1);
+}
+
+.content_wrapper {
+    width: 100%;
+    height: 80%;
+    max-width: 1440px;
+}
+
+.projects_wrapper {
+    width: 880px;
+    background-color: blue;
+    position: relative;
+
+    h2 {
+        font-size: 64px;
+        color: rgba(61, 207, 182, 1);
+        font-family: 'Fira Code';
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .section_title {
+        position: absolute;
+        left: 0;
+        top: -40px;
+        color: rgba(61, 207, 182, 1);
+        font-size: 24px;
+        font-family: 'Karla';
+        font-weight: 700;
+    }
+}
