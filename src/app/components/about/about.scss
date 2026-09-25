@@ -1,6 +1,6 @@
 .about_me {
     width: 100%;
-    height: 100dvh;
+    // height: 100dvh;
     padding: 145px 96px;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
 
 .about_wrapper {
     width: 100%;
-    height: 100%;
+    height: 700px; // anpassen für responsive
     display: flex;
     justify-content: space-between;
 }
