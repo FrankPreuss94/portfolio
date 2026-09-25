@@ -97,12 +97,35 @@
         font-family: 'Karla';
         font-weight: 400;
     }
-
-
 }
 
 .skill_icons {
     width: 632px;
     height: 428px;
-    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 104px);
+    grid-template-rows: repeat(3, 116px);
+
+    justify-content: space-between;
+    row-gap: 8px;
+
+    .Skill_icn_wrap {
+        width: 104px;
+        height: 116px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
+
+        img {
+            width: 56px;
+        }
+
+        p {
+            font-family: 'Fira Code';
+            font-weight: 400;
+            font-size: 18px;
+        }
+    }
 }

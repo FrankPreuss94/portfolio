@@ -20,7 +20,12 @@
             </div>
 
             <div class="skill_icons">
-
+                @for (skill of skills; track skill){
+                <div class="Skill_icn_wrap">
+                    <img src="{{skill.src}}" alt="{{skill.name}}">
+                    <p>{{skill.name}}</p>
+                </div>
+                }
             </div>
         </div>
     </div>
