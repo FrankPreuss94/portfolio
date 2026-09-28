@@ -1,0 +1,358 @@
+.testimonials {
+    width: 100%;
+    padding: 145px 96px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: rgba(28, 28, 28, 1);
+}
+
+.content_wrapper {
+    width: 100%;
+    height: 80%;
+    max-width: 1440px;
+}
+
+.testimonials_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        margin: 0 0 48px;
+        font-family: 'Fira Code';
+        font-weight: 700;
+        font-size: 32px;
+        color: rgba(61, 207, 182, 1);
+    }
+}
+
+.carousel_wrapper {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    overflow: visible;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 25%;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right,
+                rgba(28, 28, 28, 1),
+                rgba(28, 28, 28, 0));
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left,
+                rgba(28, 28, 28, 1),
+                rgba(28, 28, 28, 0));
+    }
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 632px;
+    height: 274px;
+    padding: 48px 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(61, 207, 182, 1);
+    border-radius: 32px;
+    background-color: rgba(61, 207, 182, 0.25);
+    transform: translate(-50%, -50%);
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.slider.center {
+    transform:
+        translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+    cursor: default;
+}
+
+.slider.left {
+    transform:
+        translate(calc(-50% - 680px), -50%) scale(0.92);
+    opacity: 0.45;
+    z-index: 2;
+}
+
+.slider.right {
+    transform:
+        translate(calc(-50% + 680px), -50%) scale(0.92);
+    opacity: 0.45;
+    z-index: 2;
+}
+
+.carousel.is-next {
+
+    .slider {
+        transition: none;
+    }
+
+    .slider.center {
+        animation: next-center-left 0.5s ease forwards;
+        z-index: 2;
+    }
+
+    .slider.right {
+        animation: next-right-center 0.5s ease forwards;
+        z-index: 3;
+    }
+
+    .slider.left {
+        animation: next-left-right 0.5s ease forwards;
+        z-index: 2;
+    }
+}
+
+@keyframes next-center-left {
+    from {
+        transform:
+            translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translate(calc(-50% - 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+}
+
+@keyframes next-right-center {
+    from {
+        transform:
+            translate(calc(-50% + 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes next-left-right {
+    0% {
+        transform:
+            translate(calc(-50% - 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+
+    45% {
+        transform:
+            translate(calc(-50% - 1100px), -50%) scale(0.92);
+        opacity: 0;
+    }
+
+    46% {
+        transform:
+            translate(calc(-50% + 1100px), -50%) scale(0.92);
+        opacity: 0;
+    }
+
+    100% {
+        transform:
+            translate(calc(-50% + 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+}
+
+.carousel.is-previous {
+
+    .slider {
+        transition: none;
+    }
+
+    .slider.center {
+        animation: previous-center-right 0.5s ease forwards;
+        z-index: 2;
+    }
+
+    .slider.left {
+        animation: previous-left-center 0.5s ease forwards;
+        z-index: 3;
+    }
+
+    .slider.right {
+        animation: previous-right-left 0.5s ease forwards;
+        z-index: 2;
+    }
+}
+
+@keyframes previous-center-right {
+    from {
+        transform:
+            translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translate(calc(-50% + 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+}
+
+@keyframes previous-left-center {
+    from {
+        transform:
+            translate(calc(-50% - 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes previous-right-left {
+    0% {
+        transform:
+            translate(calc(-50% + 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+
+    45% {
+        transform:
+            translate(calc(-50% + 1100px), -50%) scale(0.92);
+        opacity: 0;
+    }
+
+    46% {
+        transform:
+            translate(calc(-50% - 1100px), -50%) scale(0.92);
+        opacity: 0;
+    }
+
+    100% {
+        transform:
+            translate(calc(-50% - 680px), -50%) scale(0.92);
+        opacity: 0.45;
+    }
+}
+
+.quote_mark {
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 365px);
+    width: 80px;
+    height: auto;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.testimonial_text {
+    margin: 0;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+    color: white;
+}
+
+.testimonial_author {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 45px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .line {
+        flex: 1;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    p {
+        margin: 0;
+        font-family: 'Karla';
+        font-size: 16px;
+        color: white;
+        white-space: nowrap;
+    }
+}
+
+.carousel_buttons {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    position: relative;
+    z-index: 20;
+}
+
+.arrow_button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.15);
+        }
+    }
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+
+    &.active {
+        background-color: rgba(61, 207, 182, 1);
+        transform: scale(1.1);
+    }
+}

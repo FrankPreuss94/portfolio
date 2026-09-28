@@ -5,9 +5,10 @@ import { Hero } from './components/hero/hero';
 import { About } from './components/about/about';
 import { Skills } from './components/skills/skills';
 import { Projects } from './components/projects/projects';
+import { Testimonials } from './components/testimonials/testimonials';
 
 @Component({
-  imports: [RouterOutlet, Header, Hero, About, Skills, Projects],
+  imports: [RouterOutlet, Header, Hero, About, Skills, Projects, Testimonials],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
