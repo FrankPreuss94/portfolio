@@ -1,3 +1,6 @@
+@use '../../../../public/assets/styles/variables.scss' as var;
+@use '../../../../public/assets/styles/mixins.scss';
+
 .projects {
     width: 100%;
     padding: 145px 96px;
@@ -20,17 +23,15 @@
         position: absolute;
         left: 0;
         top: -40px;
-        color: rgba(61, 207, 182, 1);
+        color: var.$color-primary;
         font-size: 24px;
-        font-family: 'Karla';
-        font-weight: 700;
+        @include mixins.karla7;
     }
 
     h2 {
         font-size: 64px;
-        color: rgba(61, 207, 182, 1);
-        font-family: 'Fira Code';
-        font-weight: 700;
+        color: var.$color-primary;
+        @include mixins.fira7;
         margin-bottom: 41px;
     }
 }
@@ -39,8 +40,7 @@
     width: 35%;
     display: flex;
     align-items: center;
-    font-family: 'Karla';
-    font-weight: 400;
+    @include mixins.karla4;
     font-size: 18px;
     margin-bottom: 41px;
 }
@@ -57,8 +57,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
-    border-top: 1px solid rgba(61, 207, 182, 1);
-    border-bottom: 1px solid rgba(61, 207, 182, 1);
+    border-top: 1px solid var.$color-primary;
+    border-bottom: 1px solid var.$color-primary;
     cursor: pointer;
 
     &:hover {
@@ -74,8 +74,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        font-family: 'Fira Code';
-        font-weight: 700;
+        @include mixins.fira7;
         font-size: 24px;
 
         img {
@@ -101,13 +100,12 @@
 }
 
 .project_tech {
-    font-family: 'Karla';
-    font-weight: 400;
+    @include mixins.karla4;
     font-size: 18px;
     text-align: right;
 
     span {
-        color: rgba(61, 207, 182, 1);
+        color: var.$color-primary;
     }
 }
 

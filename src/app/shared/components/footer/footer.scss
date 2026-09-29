@@ -1,3 +1,6 @@
+@use '../../../../../public/assets/styles/variables.scss' as var;
+@use '../../../../../public/assets/styles/mixins.scss';
+
 footer {
     width: 100%;
     padding: 64px 96px;
@@ -17,8 +20,7 @@ footer {
 
 .logo_wrapper {
     font-size: 16px;
-    font-family: 'Karla';
-    font-weight: 400;
+    @include mixins.karla4;
 
     img {
         margin-bottom: 32px;
@@ -27,9 +29,8 @@ footer {
 
 h5 {
     font-size: 18px;
-    color: rgba(61, 207, 182, 1);
-    font-family: 'Fira Code';
-    font-weight: 400;
+    color: var.$color-primary;
+    @include mixins.fira4;
     padding-top: 64px;
 }
 
@@ -41,7 +42,6 @@ h5 {
     a {
         text-decoration: none;
         font-size: 16px;
-        font-family: 'Karla';
-        font-weight: 400;
+        @include mixins.karla4;
     }
 }

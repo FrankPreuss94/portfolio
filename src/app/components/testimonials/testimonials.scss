@@ -1,3 +1,6 @@
+@use '../../../../public/assets/styles/variables.scss' as var;
+@use '../../../../public/assets/styles/mixins.scss';
+
 .testimonials {
     width: 100%;
     padding: 145px 96px;
@@ -20,10 +23,9 @@
 
     h2 {
         margin: 0 0 48px;
-        font-family: 'Fira Code';
-        font-weight: 700;
+        @include mixins.fira7;
         font-size: 32px;
-        color: rgba(61, 207, 182, 1);
+        color: var.$color-primary;
     }
 }
 
@@ -74,7 +76,7 @@
     height: 274px;
     padding: 48px 40px;
     box-sizing: border-box;
-    border: 1px solid rgba(61, 207, 182, 1);
+    border: 1px solid var.$color-primary;
     border-radius: 32px;
     background-color: rgba(61, 207, 182, 0.25);
     transform: translate(-50%, -50%);
@@ -270,8 +272,7 @@
 
 .testimonial_text {
     margin: 0;
-    font-family: 'Karla';
-    font-weight: 400;
+    @include mixins.karla4;
     font-size: 18px;
     line-height: 1.4;
     color: white;
@@ -294,7 +295,7 @@
 
     p {
         margin: 0;
-        font-family: 'Karla';
+        @include mixins.karla4;
         font-size: 16px;
         color: white;
         white-space: nowrap;
@@ -352,7 +353,7 @@
         transform 0.3s ease;
 
     &.active {
-        background-color: rgba(61, 207, 182, 1);
+        background-color: var.$color-primary;
         transform: scale(1.1);
     }
 }
