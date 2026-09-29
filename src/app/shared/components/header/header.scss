@@ -7,7 +7,8 @@ header {
     display: flex;
     justify-content: center;
     padding-inline: 96px;
-    position: absolute;
+    position: fixed;
+    top: 0;
 }
 
 .content_wrapper {
