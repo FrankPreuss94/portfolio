@@ -11,40 +11,28 @@
                         </p>
                     </div>
                     <div class="project_list">
+
+                        @for (project of projectList; track project) {
                         <div class="project_row">
                             <div class="project_name">
                                 <h3>
-                                    Join
+                                    {{project.projectName}}
                                     <img src="./assets/images/arrow_outward.png" alt="arrow_outward">
                                 </h3>
                             </div>
                             <div class="project_tech">
-                                Angular <span>|</span>
-                                TypeScript <span>|</span>
-                                HTML <span>|</span>
-                                CSS <span>|</span>
-                                Firebase
+                                <p>@for (tech of project.tech; track tech; let last = $last) {
+                                    {{tech}}
+                                    @if (!last) {
+                                    <span>|</span>}
+                                    }
+                                </p>
                             </div>
                             <div class="project_preview">
-                                <img src="./assets/images/projects/join.png" alt="Join preview">
+                                <img src="{{project.previewImg}}" alt="{{project.projectName}} preview">
                             </div>
                         </div>
-                        <div class="project_row">
-                            <div class="project_name">
-                                <h3>
-                                    El Pollo Loco
-                                    <img src="./assets/images/arrow_outward.png" alt="arrow_outward">
-                                </h3>
-                            </div>
-                            <div class="project_tech">
-                                HTML <span>|</span>
-                                CSS <span>|</span>
-                                JavaScript
-                            </div>
-                            <div class="project_preview">
-                                <img src="./assets/images/projects/el_pollo_loco.png" alt="El Pollo Loco preview">
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
