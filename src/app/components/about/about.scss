@@ -28,12 +28,48 @@
     height: 100%;
     display: flex;
     align-items: flex-start;
+    position: relative;
 
     img {
         width: 568px;
         height: 568px;
         object-fit: cover;
         border-radius: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        left: -46px;
+        top: 30px;
+
+        width: 568px;
+        height: 568px;
+
+        background-image: url('/assets/images/pattern_about.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        opacity: 0;
+        z-index: 0;
+    }
+
+    &.pattern-visible::after {
+        animation: show-pattern 0.4s ease forwards;
+    }
+}
+
+@keyframes show-pattern {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
