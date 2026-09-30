@@ -39,8 +39,31 @@ img {
     height: 48px;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Fira Code';
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: 'Fira Code';
+    }
+
+    img {
+        width: 7px;
+        height: 7px;
+        visibility: hidden;
+        opacity: 0;
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+}
+
+.links:hover {
+    img {
+        opacity: 1;
+        visibility: visible;
+    }
 }

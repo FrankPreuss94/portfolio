@@ -112,9 +112,7 @@
 .project_preview {
     position: absolute;
     left: calc(100% + 80px);
-    // top: 50%;
     width: 360px;
-    // transform: translateY(-50%);
     opacity: 0;
     visibility: hidden;
     transition:
