@@ -9,6 +9,7 @@ header {
     padding-inline: 96px;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 .content_wrapper {
@@ -51,6 +52,8 @@ img {
     }
 
     img {
+        position: absolute;
+        bottom: 24px;
         width: 7px;
         height: 7px;
         visibility: hidden;
