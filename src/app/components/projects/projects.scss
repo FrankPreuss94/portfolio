@@ -152,3 +152,55 @@
         visibility: visible;
     }
 }
+
+dialog {
+    // width: 80%;
+    // height: 80%;
+    // max-width: 1440px;
+    width: 1248px;
+    height: 656px;
+    margin: auto;
+    background: linear-gradient(45deg,
+            rgba(28, 28, 28, 1) 35%,
+            rgba(8, 70, 59, 1) 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 64px 80px;
+}
+
+.description_wrapper {
+    .name_id {
+        h2 {
+            @include mixins.karla7;
+            font-size: 128px;
+            margin-bottom: 0px;
+        }
+
+        h3 {
+            @include mixins.fira7;
+            font-size: 64px;
+        }
+    }
+
+    .description {
+        h5 {
+            @include mixins.fira7;
+            font-size: 24px;
+            color: var.$color-primary;
+        }
+
+        p {
+            @include mixins.karla4;
+            font-size: 18px;
+        }
+    }
+
+    .tech_stack {
+        display: flex;
+
+        .single_tech {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
