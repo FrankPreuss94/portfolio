@@ -47,8 +47,8 @@ export class Projects {
         "CSS",
         "JavaScript",
       ],
-      github: "",
-      liveTest: "",
+      github: "https://github.com/FrankPreuss94/El_pollo_loco",
+      liveTest: "https://frankpreuss.developerakademie.net/El_pollo_loco/index.html",
     }
   ]
 
@@ -56,5 +56,14 @@ export class Projects {
     this.selectedProject = project;
   }
 
+  nextProject() {
+    const currentProject = this.projectList.findIndex(
+      project => project.id === this.selectedProject!.id
+    );
+
+    const nextProject = (currentProject + 1) % this.projectList.length;
+
+    this.selectedProject = this.projectList[nextProject];
+  }
 
 }

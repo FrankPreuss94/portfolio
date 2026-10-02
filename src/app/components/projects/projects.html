@@ -34,34 +34,54 @@
                         </div>
                         }
 
-                        <dialog #projectDialog class="project_dialog">
+                        <dialog #projectDialog class="project_dialog" closedby="any">
                             @if (selectedProject) {
-                            <div class="description_wrapper">
-                                <div class="name_id">
-                                    <h2>0{{selectedProject.id}}</h2>
-                                    <h3>{{selectedProject.projectName}}</h3>
-                                </div>
-
-                                <div class="description">
-                                    <h5>What is this project about?</h5>
-                                    <p>{{selectedProject.description}}</p>
-
-                                </div>
-
-                                <div class="tech_stack">
-                                    @for (tech of selectedProject.tech; track tech) {
-                                    <div class="single_tech">
-                                        <img src="./assets/images/tech_icons/detail_icons/{{tech}}.png" alt="{{tech}}">
-                                        <p>{{tech}}</p>
+                            <div class="close_wrapper">
+                                <button (click)="projectDialog.close()">
+                                    <img class="close_default" src="./assets/images/close_small.png" alt="close">
+                                    <img class="close_hover" src="./assets/images/close.png" alt="close">
+                                </button>
+                            </div>
+                            <div class="detail_wrapper">
+                                <div class="description_wrapper">
+                                    <div class="name_id">
+                                        <h2>0{{selectedProject.id}}</h2>
+                                        <h3>{{selectedProject.projectName}}</h3>
                                     </div>
-                                    }
+
+                                    <div class="description">
+                                        <h5>What is this project about?</h5>
+                                        <p>{{selectedProject.description}}</p>
+
+                                    </div>
+
+                                    <div class="tech_stack">
+                                        @for (tech of selectedProject.tech; track tech) {
+                                        <div class="single_tech">
+                                            <img src="./assets/images/tech_icons/detail_icons/{{tech}}.png"
+                                                alt="{{tech}}">
+                                            <p>{{tech}}</p>
+                                        </div>
+                                        }
+                                    </div>
+
+                                    <div class="links_wrapper">
+                                        <a href="{{selectedProject.github}}" target="_blank">GitHub
+                                            <img src="./assets/images/arrow_outward_primary.png" alt=""></a>
+
+                                        <a href="{{selectedProject.liveTest}}" target="_blank">Live Test
+                                            <img src="./assets/images/arrow_outward_primary.png" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="preview_wrapper">
+                                    <img src="{{selectedProject.previewImg}}" alt="{{selectedProject.projectName}}">
                                 </div>
                             </div>
+                            <div class="scoll_buttons">
+                                <button (click)="nextProject()" class="next">Next project <img
+                                        src="./assets/images/arrow_forward_primary.png" alt="next project"></button>
+                            </div>
                             }
-
-                            <button (click)="projectDialog.close()">
-                                Close
-                            </button>
 
                         </dialog>
                     </div>
