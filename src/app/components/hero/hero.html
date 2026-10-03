@@ -15,7 +15,10 @@
             </div>
         </div>
         <div class="social_links">
-            <a href="mailto:preuss.frank.94@gmail.com" class="mailto">preuss.frank.94@gmail.com</a>
+            <a href="mailto:preuss.frank.94@gmail.com" class="mailto">
+                <span>preuss.frank.94@gmail.com</span>
+                <img src="./assets/images/mail.png" alt="Email">
+            </a>
             <div class="social_icons">
                 <div class="social_wrapper">
                     <a href="https://github.com/FrankPreuss94" target="_blank">
@@ -40,29 +43,17 @@
     <div class="banner">
         <div class="banner_content">
 
-            <p>Available for remote work</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
+            @for (copy of bannerCopies; track copy) {
+            <div class="banner_group">
 
-            <p>Frontend Developer</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
+                @for (item of bannerItems; track item) {
+                <p>{{ item }}</p>
+                <img src="./assets/images/radio_button_unchecked.png" alt="dot">
+                }
 
-            <p>Based in Essen</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
+            </div>
+            }
 
-            <p>Open to work</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
-
-            <p>Available for remote work</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
-
-            <p>Frontend Developer</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
-
-            <p>Based in Essen</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
-
-            <p>Open to work</p>
-            <img src="./assets/images/radio_button_unchecked.png" alt="dot">
 
         </div>
     </div>

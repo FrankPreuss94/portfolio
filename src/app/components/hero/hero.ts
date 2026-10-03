@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './hero.scss',
   templateUrl: './hero.html',
 })
-export class Hero {}
+export class Hero {
+
+  bannerItems: string[] = [
+    'Available for remote work',
+    'Frontend Developer',
+    'Based in Essen',
+    'Open to work'
+  ];
+
+  bannerCopies: number[] = [0, 1, 2];
+}

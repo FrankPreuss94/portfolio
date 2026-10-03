@@ -67,7 +67,7 @@
     }
 
     h1 {
-        font-size: 128px;
+        font-size: clamp(62px, calc(40px + 6.111vw), 128px);
         @include mixins.karla7;
         color: rgba(217, 217, 217, 1);
         margin-top: 12px;
@@ -196,6 +196,19 @@
     }
 }
 
+.mailto {
+    rotate: 180deg;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    @include mixins.karla4;
+    font-size: 18px;
+    text-decoration: none;
+
+    img {
+        display: none;
+    }
+}
+
 .mailto:hover {
     color: var.$color-primary;
 }
@@ -214,26 +227,33 @@
 }
 
 .banner_content {
-    width: 100%;
+    width: max-content;
     height: 100%;
     display: flex;
     align-items: center;
-    gap: 48px;
     animation: banner-scroll 15s linear infinite;
 
-    p {
-        margin: 0;
-        white-space: nowrap;
-
-        font-size: 32px;
-        @include mixins.karla4;
-        color: var.$color-primary;
-    }
-
-    img {
-        width: 7px;
-        height: 7px;
+    .banner_group {
+        display: flex;
+        align-items: center;
+        gap: 48px;
         flex-shrink: 0;
+        padding-right: 48px;
+
+        p {
+            margin: 0;
+            white-space: nowrap;
+
+            font-size: 32px;
+            @include mixins.karla4;
+            color: var.$color-primary;
+        }
+
+        img {
+            width: 7px;
+            height: 7px;
+            flex-shrink: 0;
+        }
     }
 }
 
@@ -243,7 +263,7 @@
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translateX(-33.333333%);
     }
 }
 
@@ -259,5 +279,164 @@
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .content_wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 24px minmax(0, 1fr) 24px;
+        align-items: center;
+    }
+
+    .hero {
+        padding-inline: 20px;
+    }
+
+    .content_wrapper {
+        width: 100%;
+    }
+
+    .scroll_down {
+        width: 24px;
+        gap: 18px;
+
+        .arrow_down {
+            width: 24px;
+            height: 38px;
+
+            img {
+                width: 8px;
+                height: auto;
+            }
+        }
+
+        .bar {
+            height: 176px;
+        }
+    }
+
+    .introduction {
+
+        h3 {
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: clamp(32px, 11.5vw, 40px);
+            white-space: nowrap;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .intro_btns {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+    }
+
+    .intro_btns {
+
+        button {
+            width: 120px;
+            height: 38px;
+            font-size: 14px;
+        }
+    }
+
+    .social_links {
+        width: 24px;
+        gap: 14px;
+
+        .mailto {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            rotate: 0deg;
+            writing-mode: initial;
+
+            span {
+                display: none;
+            }
+
+            img {
+                display: block;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .social_icons {
+            gap: 10px;
+        }
+
+        .social_wrapper {
+
+            a {
+                width: 24px;
+                height: 24px;
+            }
+
+            .social_icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .dot {
+                display: none;
+            }
+        }
+
+        .bar {
+            height: 88px;
+        }
+    }
+
+    .banner {
+        bottom: 50px;
+        height: 46px;
+    }
+
+    .banner_content {
+        gap: 24px;
+
+        p {
+            font-size: 16px;
+        }
+
+        img {
+            width: 5px;
+            height: 5px;
+        }
+    }
+}
+
+@media (max-width: 380px) {
+
+    .intro_btns {
+        gap: 10px;
+
+        button {
+            width: 105px;
+            height: 36px;
+            font-size: 13px;
+        }
+    }
+
+    .introduction {
+
+        h3 {
+            font-size: 15px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
     }
 }
