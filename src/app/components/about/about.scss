@@ -155,11 +155,26 @@
 
 @media (max-width: 1100px) {
 
+
+    .about_me {
+        padding-inline: 16px;
+
+        h2 {
+            font-size: 56px;
+        }
+    }
+
     .about_wrapper {
         height: auto;
         flex-direction: column;
         align-items: center;
         gap: 32px;
+    }
+
+    .about_text {
+        font-size: 16px;
+
+
     }
 
     .img_wrapper {

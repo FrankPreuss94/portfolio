@@ -21,11 +21,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 96px;
+    gap: 64px;
 }
 
 .skills_text_wrapper {
-    width: 520px;
+    width: 42%;
+    max-width: 520px;
     position: relative;
 
     .section_title {
@@ -38,17 +39,10 @@
     }
 }
 
-.section_title {
-    position: absolute;
-    left: 0;
-    top: -40px;
-    color: var.$color-primary;
-    font-size: 18px;
-}
-
 .skills_text {
-    width: 520px;
-    height: 510px;
+    width: 100%;
+    min-height: 510px;
+    height: auto;
     background-color: rgba(61, 207, 182, 0.1);
     border: 1px solid var.$color-primary;
     border-radius: 30px;
@@ -97,8 +91,10 @@
 }
 
 .skill_icons {
-    width: 632px;
+    width: 51%;
+    max-width: 632px;
     height: 428px;
+
     display: grid;
     grid-template-columns: repeat(4, 104px);
     grid-template-rows: repeat(3, 116px);
@@ -111,17 +107,97 @@
         height: 116px;
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         text-align: center;
 
         img {
             width: 56px;
+            margin-bottom: 8px
         }
 
         p {
             @include mixins.fira4;
             font-size: 18px;
         }
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .skills {
+        padding-inline: 16px;
+
+        h2 {
+            font-size: 56px;
+        }
+    }
+
+    .skills_wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .skills_text_wrapper {
+        width: 100%;
+        max-width: 568px;
+
+        .section_title {
+            font-size: 18px;
+        }
+    }
+
+    .skills_text {
+        width: 100%;
+        height: auto;
+        padding: 28px;
+
+        .text_box {
+            font-size: 16px;
+        }
+
+        .other_skills {
+
+            h5 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .skill_icons {
+        width: 100%;
+        max-width: 568px;
+        height: auto;
+
+        grid-template-columns: repeat(3, 104px);
+        grid-template-rows: repeat(4, 116px);
+
+        justify-content: space-between;
+        row-gap: 8px;
+
+        .Skill_icn_wrap {
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+
+    .skill_icons {
+        grid-template-columns: repeat(3, 80px);
+
+        .Skill_icn_wrap {
+            img {
+                width: 50px;
+            }
+        }
+    }
+
+    .skill_icons .Skill_icn_wrap {
+        width: 80px;
     }
 }
