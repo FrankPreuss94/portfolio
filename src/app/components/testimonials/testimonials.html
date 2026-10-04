@@ -10,6 +10,7 @@
                     <div class="slider" [class.left]="getPosition($index) === 'left'"
                         [class.center]="getPosition($index) === 'center'"
                         [class.right]="getPosition($index) === 'right'" (click)="goTo($index)">
+                        <div class="quote_mark"></div>
                         <p class="testimonial_text">
                             {{ testimonial.text }}
                         </p>
@@ -20,8 +21,6 @@
                     </div>
                     }
                 </div>
-
-                <img class="quote_mark" src="./assets/images/quotes.png" alt="quotes">
                 <div class="carousel_buttons">
                     <button class="arrow_button" (click)="previous()" aria-label="Previous testimonial">
                         <img src="./assets/images/arrow_back.png" alt="Previous">

@@ -65,6 +65,9 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+
+    --slider-offset: 680px;
+    --slider-exit: 1100px;
 }
 
 .slider {
@@ -72,16 +75,35 @@
     top: 50%;
     left: 50%;
     width: 632px;
-    height: 274px;
+    min-height: 274px;
+    height: auto;
     padding: 48px 40px;
+
     border: 1px solid var.$color-primary;
     border-radius: 32px;
     background-color: rgba(61, 207, 182, 0.25);
+
+    display: flex;
+    flex-direction: column;
+
     transform: translate(-50%, -50%);
     transition:
         transform 0.5s ease,
         opacity 0.5s ease;
     cursor: pointer;
+
+    .quote_mark {
+        position: absolute;
+        top: -5px;
+        left: -60px;
+        width: 89px;
+        height: 64px;
+        background-image: url('/assets/images/quotes.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        pointer-events: none;
+    }
 }
 
 .slider.center {
@@ -94,14 +116,14 @@
 
 .slider.left {
     transform:
-        translate(calc(-50% - 680px), -50%) scale(0.92);
+        translate(calc(-50% - var(--slider-offset)), -50%) scale(0.92);
     opacity: 0.45;
     z-index: 2;
 }
 
 .slider.right {
     transform:
-        translate(calc(-50% + 680px), -50%) scale(0.92);
+        translate(calc(-50% + var(--slider-offset)), -50%) scale(0.92);
     opacity: 0.45;
     z-index: 2;
 }
@@ -129,6 +151,7 @@
 }
 
 @keyframes next-center-left {
+
     from {
         transform:
             translate(-50%, -50%) scale(1);
@@ -137,15 +160,16 @@
 
     to {
         transform:
-            translate(calc(-50% - 680px), -50%) scale(0.92);
+            translate(calc(-50% - var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
 }
 
 @keyframes next-right-center {
+
     from {
         transform:
-            translate(calc(-50% + 680px), -50%) scale(0.92);
+            translate(calc(-50% + var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
 
@@ -157,27 +181,28 @@
 }
 
 @keyframes next-left-right {
+
     0% {
         transform:
-            translate(calc(-50% - 680px), -50%) scale(0.92);
+            translate(calc(-50% - var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
 
     45% {
         transform:
-            translate(calc(-50% - 1100px), -50%) scale(0.92);
+            translate(calc(-50% - var(--slider-exit)), -50%) scale(0.92);
         opacity: 0;
     }
 
     46% {
         transform:
-            translate(calc(-50% + 1100px), -50%) scale(0.92);
+            translate(calc(-50% + var(--slider-exit)), -50%) scale(0.92);
         opacity: 0;
     }
 
     100% {
         transform:
-            translate(calc(-50% + 680px), -50%) scale(0.92);
+            translate(calc(-50% + var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
 }
@@ -205,6 +230,7 @@
 }
 
 @keyframes previous-center-right {
+
     from {
         transform:
             translate(-50%, -50%) scale(1);
@@ -213,15 +239,16 @@
 
     to {
         transform:
-            translate(calc(-50% + 680px), -50%) scale(0.92);
+            translate(calc(-50% + var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
 }
 
 @keyframes previous-left-center {
+
     from {
         transform:
-            translate(calc(-50% - 680px), -50%) scale(0.92);
+            translate(calc(-50% - var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
 
@@ -233,39 +260,30 @@
 }
 
 @keyframes previous-right-left {
+
     0% {
         transform:
-            translate(calc(-50% + 680px), -50%) scale(0.92);
+            translate(calc(-50% + var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
 
     45% {
         transform:
-            translate(calc(-50% + 1100px), -50%) scale(0.92);
+            translate(calc(-50% + var(--slider-exit)), -50%) scale(0.92);
         opacity: 0;
     }
 
     46% {
         transform:
-            translate(calc(-50% - 1100px), -50%) scale(0.92);
+            translate(calc(-50% - var(--slider-exit)), -50%) scale(0.92);
         opacity: 0;
     }
 
     100% {
         transform:
-            translate(calc(-50% - 680px), -50%) scale(0.92);
+            translate(calc(-50% - var(--slider-offset)), -50%) scale(0.92);
         opacity: 0.45;
     }
-}
-
-.quote_mark {
-    position: absolute;
-    top: 5px;
-    left: calc(50% - 365px);
-    width: 80px;
-    height: auto;
-    z-index: 20;
-    pointer-events: none;
 }
 
 .testimonial_text {
@@ -277,13 +295,11 @@
 }
 
 .testimonial_author {
-    position: absolute;
-    left: 40px;
-    right: 40px;
-    bottom: 45px;
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-top: auto;
+    padding-top: 32px;
 
     .line {
         flex: 1;
@@ -353,5 +369,86 @@
     &.active {
         background-color: var.$color-primary;
         transform: scale(1.1);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .testimonials {
+        padding-inline: 32px;
+    }
+
+    .carousel_wrapper {
+        height: 400px;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+
+    .carousel {
+        --slider-offset: calc(100% + 24px);
+    }
+
+    .slider {
+        width: min(632px, 64vw);
+    }
+
+    .slider.left,
+    .slider.right {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .testimonials {
+        padding-inline: 16px;
+    }
+
+    .testimonials_wrapper {
+
+        h2 {
+            font-size: 24px;
+            line-height: 1.25;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+    }
+
+    .carousel_wrapper {
+        height: 610px;
+    }
+
+    .slider {
+        width: 100%;
+        min-height: 320px;
+        height: auto;
+        padding: 64px 40px 48px;
+        border-radius: 30px;
+
+        .quote_mark {
+            left: 0;
+            top: -5px;
+            width: 66px;
+            height: 48px;
+        }
+    }
+
+    .testimonial_text {
+        font-size: 18px;
+    }
+
+    .testimonial_author {
+        margin-top: 40px;
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .carousel_buttons {
+        margin-top: 32px;
     }
 }
