@@ -34,10 +34,10 @@
                         </div>
                         }
 
-                        <dialog #projectDialog class="project_dialog" closedby="any">
+                        <dialog #projectDialog class="project_dialog" closedby="any" (close)="closeDialog()">
                             @if (selectedProject) {
                             <div class="close_wrapper">
-                                <button (click)="projectDialog.close()">
+                                <button (click)="projectDialog.close(); closeDialog()">
                                     <img class="close_default" src="./assets/images/close_small.png" alt="close">
                                     <img class="close_hover" src="./assets/images/close.png" alt="close">
                                 </button>

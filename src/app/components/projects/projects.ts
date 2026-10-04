@@ -54,6 +54,11 @@ export class Projects {
 
   openDialog(project: Project) {
     this.selectedProject = project;
+    document.body.classList.add('dialog-open');
+  }
+
+  closeDialog() {
+    document.body.classList.remove('dialog-open');
   }
 
   nextProject() {

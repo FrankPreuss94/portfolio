@@ -8,3 +8,7 @@
 button {
     cursor: pointer;
 }
+
+body.dialog-open {
+    overflow: hidden;
+}
