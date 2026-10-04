@@ -1,20 +1,43 @@
-<header>
+<header [class.scrolled]="headerScrolled">
     <div class="content_wrapper">
-        <nav>
-            <img src="./assets/images/language_switch.png" alt="language_switch">
+
+        <nav class="desktop_nav">
+            <img src="./assets/images/language_switch.png" alt="language switch">
+
             <div class="links">
                 <a href="#about">About me</a>
                 <img src="./assets/images/radio_button_unchecked.png" alt="">
             </div>
+
             <div class="links">
                 <a href="#skills">Skills</a>
                 <img src="./assets/images/radio_button_unchecked.png" alt="">
             </div>
+
             <div class="links">
                 <a href="#projects">Projects</a>
                 <img src="./assets/images/radio_button_unchecked.png" alt="">
             </div>
         </nav>
-        <img src="./assets/images/logo.png" alt="logo">
+
+        <img class="logo desktop_logo" src="./assets/images/logo.png" alt="logo">
+
+        <button class="menu_button" [class.menu-open]="menuOpen" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen"
+            aria-label="Toggle navigation menu">
+
+            <img src="./assets/images/menu.png" alt="">
+        </button>
+
+        <img class="logo mobile_logo" src="./assets/images/logo_small.png" alt="logo">
+
+        <nav class="mobile_nav" [class.menu-open]="menuOpen">
+
+            <a href="#about" (click)="closeMenu()">About me</a>
+            <a href="#skills" (click)="closeMenu()">Skills</a>
+            <a href="#projects" (click)="closeMenu()">Projects</a>
+
+            <img class="mobile_language_switch" src="./assets/images/language_switch.png" alt="language switch">
+        </nav>
+
     </div>
 </header>
