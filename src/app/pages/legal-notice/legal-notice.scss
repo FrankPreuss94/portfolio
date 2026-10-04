@@ -6,7 +6,7 @@
     background: linear-gradient(45deg,
             rgba(28, 28, 28, 1) 35%,
             rgba(8, 70, 59, 1) 100%);
-    padding: 145px 96px;
+    padding: 145px clamp(20px, 7vw, 96px);
 }
 
 .content_wrapper {
@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-inline: 120px
+    padding-inline: clamp(20px, 7vw, 120px);
 }
 
 h2 {
@@ -50,4 +50,20 @@ ul {
 
 span {
     color: white;
+}
+
+@media (max-width: 700px) {
+
+    .legal_notice {
+        padding-inline: 20px;
+    }
+
+    .legal_wrapper {
+        padding-inline: 0;
+    }
+
+    h2 {
+        font-size: 48px;
+        margin-bottom: 40px;
+    }
 }
