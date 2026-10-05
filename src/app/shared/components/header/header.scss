@@ -36,8 +36,12 @@ header.scrolled {
 }
 
 .desktop_logo {
-    width: 132px;
-    height: 48px;
+    width: 100px;
+    height: 57px;
+}
+
+.desktop_logo_link {
+    display: block;
 }
 
 .mobile_logo,
@@ -105,8 +109,15 @@ header.scrolled {
         padding-top: 20px;
     }
 
-    .desktop_nav,
-    .desktop_logo {
+    .desktop_logo_link {
+        display: none;
+    }
+
+    .mobile_logo_link {
+        display: block;
+    }
+
+    .desktop_nav {
         display: none;
     }
 

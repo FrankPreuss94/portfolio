@@ -23,6 +23,8 @@ footer {
     @include mixins.karla4;
 
     img {
+        width: 100px;
+        height: 57px;
         margin-bottom: 32px;
     }
 }

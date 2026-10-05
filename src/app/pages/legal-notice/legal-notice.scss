@@ -7,6 +7,8 @@
             rgba(28, 28, 28, 1) 35%,
             rgba(8, 70, 59, 1) 100%);
     padding: 145px clamp(20px, 7vw, 96px);
+    display: flex;
+    justify-content: center;
 }
 
 .content_wrapper {
